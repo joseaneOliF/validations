@@ -2,7 +2,7 @@ const { User } = require('../models');
 
 const ifEmailExist = async (req, res, next) => {
   const { email } = req.body;
-  const userEmail = await User.findOnde({ where: { email } });
+  const userEmail = await User.findOne({ where: { email } });
 
   if (userEmail) {
     return res.status(409).json({
